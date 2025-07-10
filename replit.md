@@ -84,26 +84,52 @@ The application follows a full-stack architecture with a clear separation betwee
 
 ## Deployment Strategy
 
+### Deployment Options Available
+
+1. **Simple S3 Static Hosting** (Beginner-friendly)
+   - Cost: $1-5/month
+   - Setup time: 5 minutes
+   - Features: Fast, simple, no backend features
+   - Use case: Portfolio showcase without contact form
+
+2. **EC2 Full Application** (Advanced)
+   - Cost: $8-15/month (or free with AWS free tier)
+   - Setup time: 15 minutes
+   - Features: Complete application with backend
+   - Use case: Full portfolio with contact form and dynamic features
+
+3. **Professional Setup** (Production-ready)
+   - Cost: $15-30/month
+   - Setup time: 30 minutes
+   - Features: Custom domain, SSL, CDN
+   - Use case: Professional portfolio for business
+
 ### Build Process
 1. **Client Build**: Vite bundles React app to `/dist/public`
 2. **Server Build**: ESBuild compiles TypeScript server to `/dist`
 3. **Assets**: Static assets copied to distribution directory
 
+### AWS Deployment Files Created
+- `AWS_DEPLOYMENT_GUIDE.md`: Comprehensive step-by-step deployment guide
+- `deployment/ec2-setup.sh`: Automated EC2 server setup script
+- `deployment/s3-deploy.sh`: Automated S3 static website deployment script
+- `deployment/QUICK_START.md`: Beginner-friendly quick start guide
+
+### Recommended AMI for EC2
+- **Amazon Linux 2023 AMI** (Free tier eligible)
+- Instance type: `t2.micro` (Free tier) or `t3.small` (Better performance)
+- Includes automated setup scripts for Node.js, PM2, and Nginx
+
 ### Environment Configuration
 - **Development**: Local development with hot reloading
 - **Production**: Node.js server serving static files and API routes
-- **Database**: Neon PostgreSQL with connection pooling
-
-### Hosting Requirements
-- Node.js runtime environment
-- PostgreSQL database access
-- Static file serving capability
-- Environment variables for database connection
+- **Database**: Currently using in-memory storage (easily switchable to PostgreSQL)
 
 ### Performance Optimizations
 - Server-side static file serving for production
-- Efficient database queries with Drizzle ORM
+- Efficient data management with in-memory storage
 - Client-side caching with TanStack Query
 - Optimized bundle splitting with Vite
+- CloudFront CDN integration for global performance
 
-The application is designed to be deployed on platforms like Replit, Vercel, or any Node.js hosting service with PostgreSQL support.
+The application is designed to be deployed on AWS infrastructure with three different approaches based on user expertise and requirements.
