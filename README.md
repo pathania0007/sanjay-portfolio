@@ -2,26 +2,47 @@
 
 A cutting-edge cyberpunk-themed portfolio showcasing AWS expertise through 10 interactive cloud projects with 3D visualizations.
 
-## 🚀 Quick Deploy to AWS
+## 📥 Get Files from Replit First
+
+**Before deploying to AWS, you need to get your files from Replit:**
+
+### Step 1: Download from Replit
+1. Click the 3 dots menu (⋯) next to your project name in Replit
+2. Select "Download as ZIP"
+3. Extract to your computer
+
+### Step 2: Setup Locally
+```bash
+cd sanjay-portfolio
+npm install
+npm run dev  # Test locally at http://localhost:5000
+```
+
+### Step 3: Push to GitHub
+```bash
+git init
+git add .
+git commit -m "Initial portfolio"
+git remote add origin https://github.com/YOUR_USERNAME/sanjay-pathania-portfolio.git
+git push -u origin main
+```
+
+**📖 Complete setup guide: [SETUP_GUIDE.md](SETUP_GUIDE.md)**
+
+## 🚀 Deploy to AWS
 
 ### Option 1: Simple S3 Hosting (5 minutes)
 ```bash
-# Build the website
 npm run build
-
-# Deploy to S3 (requires AWS CLI configured)
 ./deployment/s3-deploy.sh
 ```
 
 ### Option 2: Full Application on EC2 (15 minutes)
-1. Launch EC2 instance with Amazon Linux 2023 AMI
-2. Connect to your instance and run:
 ```bash
-# Run the setup script
+# On EC2 instance
+git clone https://github.com/YOUR_USERNAME/sanjay-pathania-portfolio.git
+cd sanjay-pathania-portfolio
 ./deployment/ec2-setup.sh
-
-# Clone your code and deploy
-git clone YOUR_REPO_URL .
 npm install
 npm run build
 ./start.sh
