@@ -23,7 +23,7 @@ export default function About() {
           {/* Profile Image */}
           <div className="holographic rounded-3xl p-8">
             <img 
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+              src="https://bukimuki.s3.us-east-1.amazonaws.com/Screenshot_2025-07-11-17-25-06-152-edit_com.instagram.android.jpg" 
               alt="Professional headshot" 
               className="rounded-2xl shadow-2xl w-full max-w-md mx-auto" 
             />
